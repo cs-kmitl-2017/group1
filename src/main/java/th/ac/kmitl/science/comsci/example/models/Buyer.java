@@ -51,6 +51,5 @@ public class Buyer {
     public void setUriId(String uriId) {
         this.company.getUniversalCommunication().setUriId(uriId);
     }
-    
-       
+          
 }
