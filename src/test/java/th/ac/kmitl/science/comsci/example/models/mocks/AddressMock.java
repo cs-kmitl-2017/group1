@@ -10,6 +10,5 @@ public class AddressMock {
     public String citySubDivision = "Makkasan";
     public String city = "Ratchatewee";
     public String countrySubDivision = "Bangkok";
-    public String country = "Thailand";
-    
+    public String country = "Thailand";  
 }

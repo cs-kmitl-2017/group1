@@ -77,8 +77,7 @@ public class CompanyTest {
         assert (address.getCitySubDivision().contains("Makkasan"));
         assert (address.getCity().contains("Ratchatewee"));
         assert (address.getCountrySubDivision().contains("Bangkok"));
-        assert (address.getCountry().contains("Thailand"));
-                
+        assert (address.getCountry().contains("Thailand"));             
     }
 
 }
