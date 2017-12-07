@@ -1,62 +1,50 @@
 package th.ac.kmitl.science.comsci.example.models;
 
 import org.junit.Test;
+import th.ac.kmitl.science.comsci.example.models.mocks.*;
 
 public class CompanyTest {
     
+    UniversalCommunicationMock universalCommunicationMock = new UniversalCommunicationMock();
+    CompanyMock companyMock = new CompanyMock();
+    AddressMock addressMock = new AddressMock();
+    
     @Test
     public void shouldInitPropertyViaConstuctorCorrectly(){
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-
-        Company seller = new Company(id, name, globalId, taxId);
+        
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
         	
-        assert (seller.getId().equals(id));
-        assert (seller.getName().equals(name));
-        assert (seller.getGlobalId().equals(globalId));
-        assert (seller.getTaxId().equals(taxId));
+        assert (seller.getId().equals(companyMock.id));
+        assert (seller.getName().equals(companyMock.name));
+        assert (seller.getGlobalId().equals(companyMock.globalId));
+        assert (seller.getTaxId().equals(companyMock.taxId));
     }
     
     @Test
     public void canSetUniversalCommunication() {
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-        Company seller = new Company(id, name, globalId, taxId);
         
-        String uriId = "Cat202@gmail.com";
-        seller.setUniversalCommunication(uriId);
-        assert (seller.getUniversalCommunication().getUriId().equals(uriId));
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId); 
+        seller.setUniversalCommunication(universalCommunicationMock.uriId);
+        assert (seller.getUniversalCommunication().getUriId().equals(universalCommunicationMock.uriId));
     }
 
    @Test	
    public void canChangeUniversalCommunication() {
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-        String uriId = "Cat202@gmail.com";
-        Company seller = new Company(id, name, globalId, taxId);
-        seller.setUniversalCommunication(uriId);
+       
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
+        seller.setUniversalCommunication(universalCommunicationMock.uriId);
         
-        String newUriId = "Dog202@gmail.com";
-        seller.setUniversalCommunication(newUriId);
-        assert (seller.getUniversalCommunication().getUriId().equals(newUriId));
+        seller.setUniversalCommunication(universalCommunicationMock.newuriId);
+        assert (seller.getUniversalCommunication().getUriId().equals(universalCommunicationMock.newuriId));
    }
    
    @Test
     public void getAllDataFromAddressInstanceCase(){
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-
-        Company seller = new Company(id, name, globalId, taxId);
+        
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
         
         Address address = seller.getAddressInstance();
+
         address.setLine1("1103/52");
         address.setLine2("Pratunam Clinic");
         address.setLine3("Petchaburi31");
@@ -78,6 +66,7 @@ public class CompanyTest {
         assert (address.getCity().equals("Ratchatewee"));
         assert (address.getCountrySubDivision().equals("Bangkok"));
         assert (address.getCountry().equals("Thailand"));
+
     }
 
 }
