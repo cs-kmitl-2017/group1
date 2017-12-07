@@ -44,29 +44,7 @@ public class CompanyTest {
         Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
         
         Address address = seller.getAddressInstance();
-<<<<<<< HEAD
-        address.setLine1(addressMock.line1);
-        address.setLine2(addressMock.line2);
-        address.setLine3(addressMock.line3);
-        address.setLine4(addressMock.line4);
-        address.setLine5(addressMock.line5);
-        address.setStreet(addressMock.street);
-        address.setCitySubDivision(addressMock.citySubDivision);
-        address.setCity(addressMock.city);
-        address.setCountrySubDivision(addressMock.countrySubDivision);
-        address.setCountry(addressMock.country);
-        
-        assert (address.getLine1().contains(addressMock.line1));
-        assert (address.getLine2().contains(addressMock.line2));
-        assert (address.getLine3().contains(addressMock.line3));
-        assert (address.getLine4().contains(addressMock.line4));
-        assert (address.getLine5().contains(addressMock.line5));
-        assert (address.getStreet().contains(addressMock.street));
-        assert (address.getCitySubDivision().contains(addressMock.citySubDivision));
-        assert (address.getCity().contains(addressMock.city));
-        assert (address.getCountrySubDivision().contains(addressMock.countrySubDivision));
-        assert (address.getCountry().contains(addressMock.country));             
-=======
+
         address.setLine1("1103/52");
         address.setLine2("Pratunam Clinic");
         address.setLine3("Petchaburi31");
@@ -88,7 +66,7 @@ public class CompanyTest {
         assert (address.getCity().equals("Ratchatewee"));
         assert (address.getCountrySubDivision().equals("Bangkok"));
         assert (address.getCountry().equals("Thailand"));
->>>>>>> upstream/master
+
     }
 
 }
