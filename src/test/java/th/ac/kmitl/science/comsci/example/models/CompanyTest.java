@@ -1,83 +1,70 @@
 package th.ac.kmitl.science.comsci.example.models;
 
 import org.junit.Test;
+import th.ac.kmitl.science.comsci.example.models.mocks.*;
 
 public class CompanyTest {
     
+    UniversalCommunicationMock universalCommunicationMock = new UniversalCommunicationMock();
+    CompanyMock companyMock = new CompanyMock();
+    AddressMock addressMock = new AddressMock();
+    
     @Test
     public void shouldInitPropertyViaConstuctorCorrectly(){
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-
-        Company seller = new Company(id, name, globalId, taxId);
+        
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
         	
-        assert (seller.getId().equals(id));
-        assert (seller.getName().equals(name));
-        assert (seller.getGlobalId().equals(globalId));
-        assert (seller.getTaxId().equals(taxId));
+        assert (seller.getId().equals(companyMock.id));
+        assert (seller.getName().equals(companyMock.name));
+        assert (seller.getGlobalId().equals(companyMock.globalId));
+        assert (seller.getTaxId().equals(companyMock.taxId));
     }
     
     @Test
     public void canSetUniversalCommunication() {
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-        Company seller = new Company(id, name, globalId, taxId);
         
-        String uriId = "Cat202@gmail.com";
-        seller.setUniversalCommunication(uriId);
-        assert (seller.getUniversalCommunication().getUriId().equals(uriId));
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId); 
+        seller.setUniversalCommunication(universalCommunicationMock.uriId);
+        assert (seller.getUniversalCommunication().getUriId().equals(universalCommunicationMock.uriId));
     }
 
    @Test	
    public void canChangeUniversalCommunication() {
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-        String uriId = "Cat202@gmail.com";
-        Company seller = new Company(id, name, globalId, taxId);
-        seller.setUniversalCommunication(uriId);
+       
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
+        seller.setUniversalCommunication(universalCommunicationMock.uriId);
         
-        String newUriId = "Dog202@gmail.com";
-        seller.setUniversalCommunication(newUriId);
-        assert (seller.getUniversalCommunication().getUriId().equals(newUriId));
+        seller.setUniversalCommunication(universalCommunicationMock.newuriId);
+        assert (seller.getUniversalCommunication().getUriId().equals(universalCommunicationMock.newuriId));
    }
    
    @Test
     public void getAllDataFromAddressInstanceCase(){
-        String id = "id57050269";
-        String name = "Patipon Taweechat";
-        String globalId = "GId57050269";
-        String taxId = "TId57050269";
-
-        Company seller = new Company(id, name, globalId, taxId);
+        
+        Company seller = new Company(companyMock.id, companyMock.name, companyMock.globalId, companyMock.taxId);
         
         Address address = seller.getAddressInstance();
-        address.setLine1("1103/52");
-        address.setLine2("Pratunam Clinic");
-        address.setLine3("Petchaburi31");
-        address.setLine4("Jarurat");
-        address.setLine5("1");
-        address.setStreet("Petchaburi");
-        address.setCitySubDivision("Makkasan");
-        address.setCity("Ratchatewee");
-        address.setCountrySubDivision("Bangkok");
-        address.setCountry("Thailand");
+        address.setLine1(addressMock.line1);
+        address.setLine2(addressMock.line2);
+        address.setLine3(addressMock.line3);
+        address.setLine4(addressMock.line4);
+        address.setLine5(addressMock.line5);
+        address.setStreet(addressMock.street);
+        address.setCitySubDivision(addressMock.citySubDivision);
+        address.setCity(addressMock.city);
+        address.setCountrySubDivision(addressMock.countrySubDivision);
+        address.setCountry(addressMock.country);
         
-        assert (address.getLine1().contains("1103/52"));
-        assert (address.getLine2().contains("Pratunam Clinic"));
-        assert (address.getLine3().contains("Petchaburi31"));
-        assert (address.getLine4().contains("Jarurat"));
-        assert (address.getLine5().contains("1"));
-        assert (address.getStreet().contains("Petchaburi"));
-        assert (address.getCitySubDivision().contains("Makkasan"));
-        assert (address.getCity().contains("Ratchatewee"));
-        assert (address.getCountrySubDivision().contains("Bangkok"));
-        assert (address.getCountry().contains("Thailand"));             
+        assert (address.getLine1().contains(addressMock.line1));
+        assert (address.getLine2().contains(addressMock.line2));
+        assert (address.getLine3().contains(addressMock.line3));
+        assert (address.getLine4().contains(addressMock.line4));
+        assert (address.getLine5().contains(addressMock.line5));
+        assert (address.getStreet().contains(addressMock.street));
+        assert (address.getCitySubDivision().contains(addressMock.citySubDivision));
+        assert (address.getCity().contains(addressMock.city));
+        assert (address.getCountrySubDivision().contains(addressMock.countrySubDivision));
+        assert (address.getCountry().contains(addressMock.country));             
     }
 
 }

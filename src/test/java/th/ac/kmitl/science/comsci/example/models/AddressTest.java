@@ -1,67 +1,69 @@
 package th.ac.kmitl.science.comsci.example.models;
 
 import org.junit.Test;
+import th.ac.kmitl.science.comsci.example.models.mocks.AddressMock;
 
 public class AddressTest {
     private Address address = new Address();
+    AddressMock addressMock = new AddressMock();
     
     @Test
     public void line1Case(){
-        address.setLine1("1103/52");
-        assert (address.getLine1().contains("1103/52"));
+        address.setLine1(addressMock.line1);
+        assert (address.getLine1().contains(addressMock.line1));
     }
     
     @Test
     public void line2Case(){
-        address.setLine2("Pratunam Clinic");
-        assert (address.getLine2().contains("Pratunam Clinic"));
+        address.setLine2(addressMock.line2);
+        assert (address.getLine2().contains(addressMock.line2));
     }
     
     @Test
     public void line3Case(){
-        address.setLine3("Petchaburi31");
-        assert (address.getLine3().contains("Petchaburi31"));
+        address.setLine3(addressMock.line3);
+        assert (address.getLine3().contains(addressMock.line3));
     }
     
     @Test
     public void line4Case(){
-        address.setLine4("Jarurat");
-        assert (address.getLine4().contains("Jarurat"));
+        address.setLine4(addressMock.line4);
+        assert (address.getLine4().contains(addressMock.line4));
     }
     
     @Test
     public void line5Case(){
-        address.setLine5("1");
-        assert (address.getLine5().contains("1"));
+        address.setLine5(addressMock.line5);
+        assert (address.getLine5().contains(addressMock.line5));
     }
     
     @Test
     public void streetCase(){
-        address.setStreet("Petchaburi");
-        assert (address.getStreet().contains("Petchaburi"));
+        address.setStreet(addressMock.street);
+        assert (address.getStreet().contains(addressMock.street));
     }
     
     @Test
     public void citySubDivisionCase(){
-        address.setCitySubDivision("Makkasan");
-        assert (address.getCitySubDivision().contains("Makkasan"));
+        address.setCitySubDivision(addressMock.citySubDivision);
+        assert (address.getCitySubDivision().contains(addressMock.citySubDivision));
     }
     
     @Test
     public void cityCase(){
-        address.setCity("Ratchatewee");
-        assert (address.getCity().contains("Ratchatewee"));
+        address.setCity(addressMock.city);
+        assert (address.getCity().contains(addressMock.city));
     }
     
     @Test
     public void countrySubDivisionCase(){
-        address.setCountrySubDivision("Bangkok");
-        assert (address.getCountrySubDivision().contains("Bangkok"));
+        address.setCountrySubDivision(addressMock.countrySubDivision);
+        assert (address.getCountrySubDivision().contains(addressMock.countrySubDivision));
     }
     
     @Test
     public void countryCase(){
-        address.setCountry("Thailand");
-        assert (address.getCountry().contains("Thailand"));
+        address.setCountry(addressMock.country);
+        assert (address.getCountry().contains(addressMock.city));
     }
 }
