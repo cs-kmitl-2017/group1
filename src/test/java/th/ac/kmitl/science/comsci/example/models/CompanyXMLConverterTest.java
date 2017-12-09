@@ -16,7 +16,7 @@ public class CompanyXMLConverterTest {
         assert (CompanyXMLConverter.headTag.equals("BuyerCITradeParty"));
         
         Company seller = new Company(CompanyMock.id, CompanyMock.name, CompanyMock.globalId, CompanyMock.taxId);
-        String sellerXML = CompanyXMLConverter.getXml(seller, "Seller");
+        String sellerXML = CompanyXMLConverter.getXml(seller, "seller");
         assert (!sellerXML.equals(null));
         assert (CompanyXMLConverter.headTag.equals("SellerCITradeParty"));
     }
