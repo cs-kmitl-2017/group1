@@ -1,9 +1,9 @@
-package th.ac.kmitl.science.comsci.example.models;
+package th.ac.kmitl.science.comsci.example.utilities;
 
-public class CountrySubDivisionName implements Mapping {
+public class CountrySubDivisionNameMapper {
     
-    @Override
-    public int mapper(String name){
+    
+    public static int mapper(String name){
         switch(name){
             case "Bangkok"                  : return 1;
             case "Chiang Rai"               : return 2;

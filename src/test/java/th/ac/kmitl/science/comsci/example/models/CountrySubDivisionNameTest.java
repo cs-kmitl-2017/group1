@@ -2,10 +2,11 @@ package th.ac.kmitl.science.comsci.example.models;
 
 import org.junit.Test;
 import th.ac.kmitl.science.comsci.example.models.mocks.AddressMock;
+import th.ac.kmitl.science.comsci.example.utilities.CountrySubDivisionNameMapper;
 
 public class CountrySubDivisionNameTest {
     
-    private CountrySubDivisionName countrySubDivisionMapping = new CountrySubDivisionName();
+    private CountrySubDivisionNameMapper countrySubDivisionMapping = new CountrySubDivisionNameMapper();
     private AddressMock mock = new AddressMock();
     
     @Test

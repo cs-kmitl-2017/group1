@@ -1,9 +1,9 @@
-package th.ac.kmitl.science.comsci.example.models;
+package th.ac.kmitl.science.comsci.example.utilities;
 
-public class CityName implements Mapping {
+public class CityNameMapper  {
     
-    @Override
-    public int mapper(String name){
+  
+    public static int mapper(String name){
         switch(name){
             case "Phra Nakhon"          : return 1;
             case "Dusit"                : return 2;

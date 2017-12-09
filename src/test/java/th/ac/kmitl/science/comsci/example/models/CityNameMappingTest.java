@@ -2,10 +2,11 @@ package th.ac.kmitl.science.comsci.example.models;
 
 import org.junit.Test;
 import th.ac.kmitl.science.comsci.example.models.mocks.AddressMock;
+import th.ac.kmitl.science.comsci.example.utilities.CityNameMapper;
 
 public class CityNameMappingTest {
     
-    private CityName cityMapping = new CityName();
+    private CityNameMapper cityMapping = new CityNameMapper();
     private AddressMock mock = new AddressMock();
     
     @Test
